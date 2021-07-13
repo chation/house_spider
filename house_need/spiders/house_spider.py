@@ -5,6 +5,7 @@ from house_need.items import HouseNeedItem
 class HouseSpider(scrapy.Spider):
     name = "house"
     start_urls = [
+        # 2号线 杨家湾 两室 整租
         'https://wh.58.com/zufang/sub/l89/s3741/j2/',
     ]
 
