@@ -11,4 +11,8 @@ class HouseNeedItem(scrapy.Item):
     title = scrapy.Field()
     room = scrapy.Field()
     size = scrapy.Field()
-    
+    far = scrapy.Field()
+    name = scrapy.Field()
+    area = scrapy.Field()
+    pic = scrapy.Field()
+    money = scrapy.Field()
