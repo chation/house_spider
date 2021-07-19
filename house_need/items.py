@@ -8,11 +8,12 @@ import scrapy
 
 class HouseNeedItem(scrapy.Item):
     # define the fields for your item here like:
-    title = scrapy.Field()
-    room = scrapy.Field()
-    size = scrapy.Field()
-    far = scrapy.Field()
-    name = scrapy.Field()
-    area = scrapy.Field()
-    pic = scrapy.Field()
-    money = scrapy.Field()
+    source = scrapy.Field()
+    title  = scrapy.Field()
+    room   = scrapy.Field()
+    size   = scrapy.Field()
+    far    = scrapy.Field()
+    name   = scrapy.Field()
+    area   = scrapy.Field()
+    pic    = scrapy.Field()
+    money  = scrapy.Field()

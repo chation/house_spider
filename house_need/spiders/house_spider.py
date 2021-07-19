@@ -14,6 +14,7 @@ class HouseSpider(scrapy.Spider):
         house_div = response.xpath("//li[@class='house-cell realverify']")
 
         for each in house_div :
+            item['source']= 1
             item['title'] = each.xpath(".//div[@class='des']//h2//a/text()").extract()[0].strip()
             item['far']   = each.xpath(".//div[@class='des']//p[@class='infor']/text()").extract()[3].strip()
             item['name']  = each.xpath(".//div[@class='des']//p[@class='infor']//a/text()").extract()[1].strip()

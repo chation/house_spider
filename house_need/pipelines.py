@@ -8,9 +8,12 @@ class HouseNeedPipeline:
         self.cursor = self.db.cursor()
 
     def process_item(self, item, spider):
-        sql = "REPLACE INTO house_spider (subway, title, name, area, far, money) VALUES ('%s', '%s',  '%s',  '%s',  '%s', '%s')" % ('杨家湾', item['title'], item['name'], item['area'], item['far'], item['money'])
+        sql = "REPLACE INTO house_spider (subway, title, name, area, far, money, source) VALUES ('%s', '%s',  '%s',  '%s',  '%s', '%s', %d)" % ('杨家湾', item['title'], item['name'], item['area'], item['far'], item['money'], item['source'])
         print(sql)
         self.cursor.execute(sql)
+        if self.cursor.rowcount == 1 :
+            print('新数据 发送邮件通知')
+        
         self.db.commit()
         print('REPLACR INTO SUCCESSFULL')
 
